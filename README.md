@@ -9,10 +9,10 @@ Commandes :
 tu as quel age, quel est ta date de naissance.
 
 # Multi-room
-The Horoscope plugin is fully multi-room.
+The DateNaissanceAva plugin is fully multi-room.
 
 # Multi-language
-The Horoscope plugin relies solely on the system's available languages.
+The DateNaissanceAva plugin relies solely on the system's available languages.
 
 
  <table style="border: none;">
