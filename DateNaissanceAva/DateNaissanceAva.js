@@ -27,14 +27,18 @@ export async function action(data, callback) {
 
 const birthDay = (client, L) => {
 
-    const getAge = (birthday) => {
-        const birthDate = new Date(birthday);
-        const diff = Date.now() - birthDate.getTime();
-        return Math.floor(diff / 31536000000);
-    };
-        
-    const avatarAge = getAge("2017-10-01");
+     const birthDate = Config?.modules?.DateNaissanceAva?.birthDate;
+
+    const today = new Date();
+    const birth = new Date(birthDate);
+
+    let age = today.getFullYear() - birth.getFullYear();
+
+    const m = today.getMonth() - birth.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+        age--;
+    }
     
-    Avatar.speak(L.get("speech.avatar", avatarAge), client);
+    Avatar.speak(L.get("speech.avatar", age), client, () => Avatar.Speech.end(client));
 
 };
