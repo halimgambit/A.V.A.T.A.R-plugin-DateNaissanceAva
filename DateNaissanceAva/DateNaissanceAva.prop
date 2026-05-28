@@ -3,6 +3,7 @@
 		"DateNaissanceAva": {
 			"version": "1.0",
 			"name": "date-of-birthday",
+"birthDate": "2017-10-01",
 			"rules": {
 				"birthDay": ["old","date * birth","birth * date"]
 			}
